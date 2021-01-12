@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WebApplication3
@@ -53,8 +54,10 @@ namespace WebApplication3
 
         public string vat { get; set; }
 
-        public string net { get; set; }
+        //[JsonIgnore]
+        //public string net { set { (Convert.ToDouble(quantity) * Convert.ToDouble(price)).ToString(); }  get { return net; } }
 
+        public string net { get; set; }
         public string nominal { get; set; }
         public string costing { get; set; }
         public string location { get; set; }
