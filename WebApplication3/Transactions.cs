@@ -107,4 +107,92 @@ namespace WebApplication3
 
 
     }
+
+    public class SaleInput
+    {
+        
+
+        public string currcost { get; set; }
+        public string stock { get; set; }
+
+        public string disc { get; set; }
+        public string detail { get; set; }
+
+        public string quantity { get; set; }
+
+        public string price { get; set; }
+
+        public string vatcode { get; set; }
+
+        public string vat { get; set; }
+
+        public string saleCostPrice { get; set; }
+        public string net { get; set; }
+        public string nominal { get; set; }
+        public string costing { get; set; }
+        public string location { get; set; }
+        public string packsize { get; set; }
+        public string exrate { get; set; }
+        public int intPeriod { get; set; }
+
+        public string invNo { get; set; }
+
+        public string DRControl { get; set; }
+        public string VATControl { get; set; }
+
+        public string Ref { get; set; }
+
+        public string Source { get; set; }
+
+        public double lineDisc { get; set; }
+
+        public string currency { get; set; }
+
+        public string orderNo { get; set; }
+
+        public string deliveryAdd { get; set; }
+        public string invRef { get; set; }
+
+        public string enteredBy { get; set; }
+
+        public string notes { get; set; }
+
+        public string description { get; set; }
+        public string TrackingNumber { get; set; }
+
+        public bool chkIsSerial { get; set; }
+
+        public int TrackingTypeID { get; set; }
+
+        public string LocationCode { get; set; }
+
+        public string NlCode { get; set; }
+
+        public string LineDiscount { get; set; }
+
+        public string salesAgent { get; set; }
+
+
+
+    }
+
+
+    public class AllPayment
+    {
+        public string toPay { get; set; }
+
+        public string invNo { get; set; }
+        public string Source { get; set; }
+    }
+    public class PayInput
+    {
+        public string toPayCurrValue { get; set; }
+        public string Discount { get; set; }
+        public DateTime toFrom { get; set; }
+        public DateTime dFrom { get; set; }
+       
+        public List<AllPayment> AllPayments { get; set; }
+
+    }
+
 }

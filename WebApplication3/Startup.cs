@@ -22,13 +22,26 @@ namespace WebApplication3
         {
             Configuration = configuration;
         }
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<WRI6283Context>(options => options.UseSqlServer("Server=LAPTOP-28P35B81\\sqlexpress;Initial Catalog=WRI6283;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+
+          //  services.AddDbContext<WRI6283Context>(options => options.UseSqlServer("Server=VM7A14658;Database=WRI6283;User ID=sa;Password=hciFaLY54W@nu5L"));
+            
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                                  });
+            });
+
             services.AddTransient<IService, Service>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -51,6 +64,8 @@ namespace WebApplication3
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 

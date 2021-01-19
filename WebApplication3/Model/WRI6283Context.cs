@@ -189,7 +189,10 @@ namespace WebApplication3.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LAPTOP-28P35B81\\sqlexpress;Initial Catalog=WRI6283;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                 // optionsBuilder.UseSqlServer("Server=LAPTOP-28P35B81\\sqlexpress;Initial Catalog=WRI6283;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                  optionsBuilder.UseSqlServer("Server=VM7A14658;Database=WRI6283;User ID=sa;Password=hciFaLY54W@nu5L");
+
+                
             }
         }
 
